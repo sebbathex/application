@@ -1,0 +1,238 @@
+
+
+<html>
+    <head>
+
+        <title> {{title}} </title>
+        <link rel="stylesheet" 
+            href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer 
+            src="https://pyscript.net/alpha/pyscript.js">
+        </script>
+        <link rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+       
+    </head>
+    <body>  
+        <div class="jumbotron">
+            <h1> Corneal dystrophy prediction tool  </h1>
+            <p class="lead">
+                {{subtitle}}
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary">Decade of diagnosis:</button>
+            </div>    
+            <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" name="question1" id="question1" method="get" action="/submitted">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option> 
+                    <option value="unknown">unknown</option>        
+                </select>
+                
+            </div>
+            <div class="col-sm-4 p-2 mr-4 mb-1">
+                <a href="{{ url_for('submitted') }}">Auswertung</a>
+            </div>   
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Recurrent ersions?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question2">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="unknown">unknown</option>
+                   
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Primarily affected layer?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question3"name="question3" method="POST" action="/submitted">
+                    <option value="Endothelium">Endothelium</option>
+                    <option value="Epithelium">Epithelium</option>
+                    <option value="Stroma">Stroma</option>
+                    <option value="Stroma/Endo">Stroma/Endo</option> 
+                    <option value="unknown">unknown</option>       
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Corneal thinning?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question4" name="question4" action="/submitted" method='POST'>
+                    <option value="No">No</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Progressive?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question5">
+                    <option value="No">No</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Inheritance?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question6">
+                    <option value="AD">AD</option>
+                    <option value="AR">AR</option>
+                    <option value="NO">NO</option>
+                    <option value="X">X</option>
+                    <option value="XD">XD</option>
+                    <option value="XR">XR</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> MAy be unilateral?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question7">
+                    <option value="Yes">Yes</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Microcysts?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question8">
+                    <option value="Yes">Yes</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Epithelial thickening?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question9">
+                    <option value="Yes">Yes</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Stroma Rings/Stars?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question10">
+                    <option value="Yes">Yes</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Stroma central snowflakes?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question11">
+                    <option value="Yes">Yes</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Stroma cloudy appearance?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question12">
+                    <option value="Yes">Yes</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Stroma arcus?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question13">
+                    <option value="Yes">Yes</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Stroma honeycomb?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question14">
+                    <option value="Yes">Yes</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Stroma confluent geographic?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question15">
+                    <option value="Yes">Yes</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Stroma predescemetal haze?:</button>
+            </div>    <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="question16">
+                    <option value="Yes">Yes</option>
+                    <option value="unknown">unknown</option>
+                            
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary"> Submit </button>
+            </div>    
+                
+        </div>
+        
+        <!-- HTML layout code goes here -->        
+        
+    </body>
+</html>
